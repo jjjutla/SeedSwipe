@@ -29,7 +29,7 @@ https://seedswipehack.fastgenapp.com/match
 
 Once there is a match between the startup and investors and animation is displayed. The match API saves the investors email and the matches to a database and an email is sent to the startup using the SMTP protocol block. The startup will then appear in the inbox where you can message them.
 
-## **5. Investment Payments **
+## **5. Investment Payments:**
 https://seedswipehack.fastgenapp.com/payment
 
 Once in the chat feature a button for the investor to send payments will appear. The investor can send their funding through our payments API which is connected to Stripe  Once they have sent the funding to the startup the investor will receive an email with their unique investor code which is taken from a database. We built an event workflow to easily manage and handle the stripe webhook, databse query and the STMP sending.
