@@ -1,19 +1,19 @@
-# SeedSwipe - Fastgen hackathon
+# SeedSwipe 
 
 
-# Workflow Breakdown:
-## **1. User Authentication:**
-**seedswipehack.fastgenapp.com/users**: User Signup and Signin
+## Workflow Breakdown:
+### **1. User Authentication:**
+https://seedswipehack.fastgenapp.com/auth/signup
+https://seedswipehack.fastgenapp.com/auth/signin
+https://seedswipehack.fastgenapp.com/users
 
-**seedswipehack.fastgenapp.com/login**: User Login Authentication
-- User logs in or signs up as an investor.
-- Fastgen's authentication is used to verify the user.
-- Twilio SMS is used as a second factor for authentication.
+We used Fastgens built in authentication for  user management, to create, manage and view users. Adding a database query made it easy to save them to a database so we could built endpoints around those so that only the registered users could have access to the routes. Twillo SMS was also used as a second factor authentication.
 
 ## **2. User Preferences:**
-**seedswipehack.fastgenapp.com/userinfo**:User Prefences and LinkedIn
+https://seedswipehack.fastgenapp.com/userinfo
+
 - After successful authentication, the user is directed to a preferences screen.
-- The user fills out preferences like industry, company size, employee size, funding, etc. as well as information like LinkedIn, etc.
+- The user fills out preferences like industry, company size, employee size, funding, etc. as well as information like LinkedIn. The LinkedIn API is used to get the investors profile picture.
 
 ## **3. Swiping Screen:**
 **https://data.crunchbase.com/docs/using-the-api**
@@ -24,40 +24,16 @@
 - The startup logo is fetched from the LinkedIn API.
   
 ## **4. Match & Chat:**
-- If there's a match between a startup and an investor, an animation is displayed.
-- A chat feature is enabled for the matched pair.
-- An email is sent to the startup by SMTP/Mailchip
-- The investor can send money to the startup via the Stripe API within the chat.
-- Once the money is sent, an automated email is sent to the investor for confirmation.
-  
-## **5. Referral Feature:**
-- There's a button in the app allowing users to share a Fastgen referral link.
+https://seedswipehack.fastgenapp.com/match
+
+Once there is a match between the startup and investors and animation is displayed. The match API saves the investors email and the matches to a database and an email is sent to the startup using the SMTP protocol block. The startup will then appear in the inbox where you can message them.
+
+## **5. Investment Payments **
+https://seedswipehack.fastgenapp.com/payment
+
+Once in the chat feature a button for the investor to send payments will appear. The investor can send their funding through our payments API which is connected to Stripe  Once they have sent the funding to the startup the investor will receive an email with their unique investor code which is taken from a database. We built an event workflow to easily manage and handle the stripe webhook, databse query and the STMP sending.
+
+## **6. Referral Feature:**
+- There's a button in the app allowing users to share a Fastgen referral link!
 
 
-DAtabase
-
-
-
-## Fastgen Codeblocks Implementation:
-
-I'll probabbly break down the endpoints and their uses here:
-
-User Authentication:
-Use the Variable block to capture user input.
-Use the HTTP Request or GraphQL block to communicate with Fastgen's authentication.
-Use the Twilio SMS block for sending an authentication code.
-User Preferences:
-Use the Variable block to capture user preferences.
-Store these preferences using the DB Query block (INSERT operation).
-Swiping Screen:
-Use the HTTP Request block to fetch startups from Crunchbase based on filters.
-Use the DB Query block to store this data in the SQL database.
-Use the HTTP Request block to fetch the startup logo from LinkedIn.
-Match & Chat:
-Use the IF condition block to check for a match.
-Use the Variable block to enable the chat feature.
-Use the HTTP Request block to integrate with the Stripe API for payments.
-Use the Sendgrid or Mailgun block to send an automated email confirmation.
-Referral Feature:
-Use the Variable block to generate and store the referral link.
-Use the Email (SMTP) or other relevant blocks to share the referral link.
