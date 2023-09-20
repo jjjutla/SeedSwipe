@@ -4,15 +4,20 @@
 
 # Workflow Breakdown:
 ## **1. User Authentication:**
+** seedswipehack.fastgenapp.com/users ** - User Signup and Signin
+** seedswipehack.fastgenapp.com/login ** - User Login Authentication
 - User logs in or signs up as an investor.
 - Fastgen's authentication is used to verify the user.
 - Twilio SMS is used as a second factor for authentication.
 
 ## **2. User Preferences:**
+** seedswipehack.fastgenapp.com/userinfo ** - User Prefences and LinkedIn
 - After successful authentication, the user is directed to a preferences screen.
 - The user fills out preferences like industry, company size, employee size, funding, etc. as well as information like LinkedIn, etc.
 
 ## **3. Swiping Screen:**
+** https://data.crunchbase.com/docs/using-the-api **
+** [AI Foundation Model](https://github.com/nkoorty/SeedSwipe/tree/main/ReccomendationModel)
 - Startups are pulled from Crunchbase based on the user's preferences though our foundation model.
  - This data is stored in an SQL database.
 - Startups are randomly shown to the investor for swiping based on the model.
@@ -27,6 +32,11 @@
   
 ## **5. Referral Feature:**
 - There's a button in the app allowing users to share a Fastgen referral link.
+
+
+DAtabase
+
+
 
 ## Fastgen Codeblocks Implementation:
 
