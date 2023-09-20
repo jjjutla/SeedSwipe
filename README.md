@@ -5,7 +5,9 @@
 ### **1. User Authentication:**
 
 https://seedswipehack.fastgenapp.com/auth/signup
+
 https://seedswipehack.fastgenapp.com/auth/signin
+
 https://seedswipehack.fastgenapp.com/users
 
 We used Fastgens built in authentication for  user management, to create, manage and view users. Adding a database query made it easy to save them to a database so we could built endpoints around those so that only the registered users could have access to the routes. Twillo SMS was also used as a second factor authentication.
