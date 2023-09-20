@@ -23,7 +23,9 @@
 5. Referral Feature:
 - There's a button in the app allowing users to share a Fastgen referral link.
 
-Fastgen Codeblocks Implementation:
+## Fastgen Codeblocks Implementation:
+
+I'll probabbly break down the endpoints and their uses here:
 User Authentication:
 Use the Variable block to capture user input.
 Use the HTTP Request or GraphQL block to communicate with Fastgen's authentication.
