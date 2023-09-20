@@ -42,7 +42,7 @@ There's a button in the app allowing users to share a Fastgen referral link!
 
 ## Team
 
-[Jeevan Jutla](https://www.linkedin.com/in/jeevan-jutla/): ML Model & Fastgen
-[Artemiy Malyshau](https://www.linkedin.com/in/artemiy-malyshau/): iOS App & Fastgen
+- [Jeevan Jutla](https://www.linkedin.com/in/jeevan-jutla/): ML Model & Fastgen
+- [Artemiy Malyshau](https://www.linkedin.com/in/artemiy-malyshau/): iOS App & Fastgen
 
 
