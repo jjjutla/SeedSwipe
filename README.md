@@ -1,5 +1,4 @@
-# SeedSwipe
-# Fastgen hackathon
+# SeedSwipe - Fastgen hackathon
 
 
 # Workflow Breakdown:
