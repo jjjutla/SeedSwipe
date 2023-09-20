@@ -1,4 +1,4 @@
-# SeedSwipe 
+# [SeedSwipe](https://twitter.com/SeedSwipe)
 
 
 ## Workflow Breakdown:
@@ -34,5 +34,15 @@ Once in the chat feature a button for the investor to send payments will appear.
 
 ## **6. Referral Feature:**
 There's a button in the app allowing users to share a Fastgen referral link!
+
+
+
+## Images
+
+
+## Team
+
+[Jeevan Jutla](https://www.linkedin.com/in/jeevan-jutla/): ML Model & Fastgen
+[Artemiy Malyshau](https://www.linkedin.com/in/artemiy-malyshau/): iOS App & Fastgen
 
 
