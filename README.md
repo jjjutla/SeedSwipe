@@ -35,6 +35,6 @@ https://seedswipehack.fastgenapp.com/payment
 Once in the chat feature a button for the investor to send payments will appear. The investor can send their funding through our payments API which is connected to Stripe  Once they have sent the funding to the startup the investor will receive an email with their unique investor code which is taken from a database. We built an event workflow to easily manage and handle the stripe webhook, databse query and the STMP sending.
 
 ## **6. Referral Feature:**
-- There's a button in the app allowing users to share a Fastgen referral link!
+There's a button in the app allowing users to share a Fastgen referral link!
 
 
