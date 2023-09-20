@@ -5,6 +5,7 @@
 # Workflow Breakdown:
 ## **1. User Authentication:**
 **seedswipehack.fastgenapp.com/users**: User Signup and Signin
+
 **seedswipehack.fastgenapp.com/login**: User Login Authentication
 - User logs in or signs up as an investor.
 - Fastgen's authentication is used to verify the user.
