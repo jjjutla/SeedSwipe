@@ -17,8 +17,8 @@
 - The user fills out preferences like industry, company size, employee size, funding, etc. as well as information like LinkedIn, etc.
 
 ## **3. Swiping Screen:**
-** https://data.crunchbase.com/docs/using-the-api **
-** [AI Foundation Model](https://github.com/nkoorty/SeedSwipe/tree/main/ReccomendationModel)
+**https://data.crunchbase.com/docs/using-the-api**
+**[AI Foundation Model](https://github.com/nkoorty/SeedSwipe/tree/main/ReccomendationModel)**
 - Startups are pulled from Crunchbase based on the user's preferences though our foundation model.
  - This data is stored in an SQL database.
 - Startups are randomly shown to the investor for swiping based on the model.
