@@ -1,4 +1,4 @@
-# Seedswipe Recommendation System Model (Content Based Filtering)
+# SeedSwipe Recommendation System Model (Content Based Filtering)
 
 ## Business Problem
 
