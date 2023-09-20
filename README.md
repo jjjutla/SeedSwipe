@@ -17,8 +17,8 @@ We used Fastgens built in authentication for  user management to create, manage 
 After successful authentication, the user is directed to a preferences screen. The user fills out preferences like industry, company size, employee size, funding, etc. as well as information like LinkedIn. The LinkedIn API is used to get the investors profile picture. This preference information is stored in the database as a boolean value and then fed into ML selection model hosted on huggingface.
 
 ## **3. Swiping Screen:**
-- **https://data.crunchbase.com/docs/using-the-api**
-- **[Foundation Model](https://github.com/nkoorty/SeedSwipe/tree/main/ReccomendationModel)**
+- https://data.crunchbase.com/docs/using-the-api
+- [Foundation Model](https://github.com/nkoorty/SeedSwipe/tree/main/ReccomendationModel)
 
 Our content based filtering machine learning model, which is based on a similar model as Netflix's *CinematchSM* reccomendation model is what is used to display potential matches. View the [Documentation](https://github.com/nkoorty/SeedSwipe/blob/main/ReccomendationModel/README.md) and [Code](https://github.com/nkoorty/SeedSwipe/blob/main/ReccomendationModel/SeedSwipe_Model.ipynb) for more details and the training results. The dataset was a collection of investors and startups pulled from the Crunchbase API.
 
