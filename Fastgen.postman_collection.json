@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "25b8d176-6ba2-4610-969b-df415b170161",
+		"name": "Fastgen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25678992"
+	},
+	"item": [
+		{
+			"name": "https://seedswipehack.fastgenapp.com/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "rid",
+						"value": "aint-csrf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://seedswipehack.fastgenapp.com/users",
+					"protocol": "https",
+					"host": [
+						"seedswipehack",
+						"fastgenapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://seedswipehack.fastgenapp.com/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "rid",
+						"value": "aint-csrf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"JJ\",\n    \"last_name\": \"Jutla\",\n    \"email\": \"jeevan.jutla@gmail.com\",\n    \"number\": \"+436605441857\",\n    \"preference\": \"biotech\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://seedswipehack.fastgenapp.com/users",
+					"protocol": "https",
+					"host": [
+						"seedswipehack",
+						"fastgenapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://seedswipehack.fastgenapp.com/auth/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"formFields\": [\n        {\n            \"id\": \"email\",\n            \"value\": \"jeevan.jutla@gmail.com\"\n        },\n        {\n            \"id\": \"password\",\n            \"value\": \"Monkey123\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://seedswipehack.fastgenapp.com/auth/signin",
+					"protocol": "https",
+					"host": [
+						"seedswipehack",
+						"fastgenapp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://seedswipehack.fastgenapp.com/login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://seedswipehack.fastgenapp.com/login",
+					"protocol": "https",
+					"host": [
+						"seedswipehack",
+						"fastgenapp",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
