@@ -1,7 +1,7 @@
 # [SeedSwipe](https://twitter.com/SeedSwipe)
 You've heard about Tinder, but what about SeedSwipe? 
 
-With SeedSwipe's iOS app its easier to better connect investors to startups. Using a machine learning model inspired by Netflix's content based filtering that pairs the most compatible startups with investors. The app is integrated with the Crunchbase database for startup data and facilitates instant investment transactions via Stripe's trusted payment processing. To ensure utmost security, SeedSwipe incorporates Twillo and Fastgen's authentication. Additionally, with Fastgen at its core the app provides email conformations for every investment and match.
+With SeedSwipe's iOS app its easier to connect investors to startups. Using a machine learning model inspired by Netflix's content based filtering that pairs the most compatible startups with investors. The app is integrated with the Crunchbase database for startup data and facilitates instant investment transactions via Stripe's trusted payment processing. To ensure utmost security, SeedSwipe incorporates Twillo and Fastgen's authentication. Additionally, with Fastgen at its core the app provides email conformations for every investment and match.
 
 ## Workflow Breakdown:
 ### **1. User Authentication:**
