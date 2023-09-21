@@ -4,11 +4,11 @@ You've heard about Tinder, but what about SeedSwipe?
 With SeedSwipe's iOS app its easier to connect investors to startups. It uses a machine learning model inspired by Netflix's content based filtering that pairs the most compatible startups with investors. The app is integrated with the Crunchbase database for startup and investor data and facilitates instant investment transactions via Stripe's trusted payment processing. To ensure utmost security, SeedSwipe incorporates Twillo and Fastgen's authentication. Additionally, with Fastgen at its core the app provides email conformations for every investment and match.
 
 ### Images
-<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/07382df8-4003-4cba-bd3f-29e419beae08" width=20% height=20%>
-<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/6e435f6b-2f60-4edf-840e-8da2d0abb075" width=20% height=20%>
-<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/222ef022-6bae-4f59-9742-bf656188e020" width=20% height=20%>
-<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/6ccd7aa9-b1ce-4e25-979c-bb5f278508bf" width=20% height=20%>
-<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/45eba53c-a4d1-4b96-a7b0-43ca0dbbf5d7" width=20% height=20%>
+<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/07382df8-4003-4cba-bd3f-29e419beae08" width=18% height=18%>
+<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/6e435f6b-2f60-4edf-840e-8da2d0abb075" width=18% height=18%>
+<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/222ef022-6bae-4f59-9742-bf656188e020" width=18% height=18%>
+<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/6ccd7aa9-b1ce-4e25-979c-bb5f278508bf" width=18% height=18%>
+<img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/45eba53c-a4d1-4b96-a7b0-43ca0dbbf5d7" width=18% height=18%>
 
 ## Workflow Breakdown:
 ### **1. User Authentication:**
