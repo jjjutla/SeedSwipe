@@ -68,7 +68,7 @@ struct ConversationView: View {
                 .padding()
                 .padding(.bottom, 8)
             }
-            .navigationBarTitle("Databricks", displayMode: .inline)
+            .navigationBarTitle("Fastgen", displayMode: .inline)
             .sheet(isPresented: $isPayingView) {
                 PaymentView()
                     .presentationDetents([.fraction(0.3)])

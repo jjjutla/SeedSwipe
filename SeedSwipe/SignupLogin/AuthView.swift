@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthView: View {
     
     @ObservedObject var authViewModel = AuthViewModel()
+    @EnvironmentObject var chatViewModel: ChatViewModel
     @State var scrollY : CGFloat = 0
     
     var body: some View {
@@ -30,11 +31,16 @@ struct AuthView: View {
                 .padding(.bottom, 30)
                 
                 if authViewModel.showSignInCard {
-                    SigninCard(authViewModel: authViewModel)
-                }
-                else {
                     SignupCard(authViewModel: authViewModel)
                 }
+                else {
+                    if authViewModel.verificationPage {
+                        VerificationView(authViewModel: authViewModel)
+                    } else {
+                        SigninCard(authViewModel: authViewModel)
+                    }
+                }
+                
             }
         }
         .padding(.top, 40)
@@ -52,6 +58,7 @@ struct AuthView: View {
         )
         .fullScreenCover(isPresented: $authViewModel.exitAuthPage) {
             TabBarView()
+                .environmentObject(chatViewModel)
         }
     }
 }

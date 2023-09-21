@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MatchPreviewView: View {
+    
+    var match: Matches
+    
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 16)
@@ -15,14 +18,14 @@ struct MatchPreviewView: View {
                 .frame(width: 100, height: 130)
                 .overlay(
                     ZStack {
-                        Image("sf")
+                        Image(match.background)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 100, height: 130)
                             .blur(radius: 2)
                             .brightness(-0.1)
                         
-                        Image("databricks")
+                        Image(match.imageUrl)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 78, height: 78)
@@ -32,7 +35,7 @@ struct MatchPreviewView: View {
                 )
             
             VStack(alignment: .leading, spacing: 6) {
-                Text("Databricks")
+                Text(match.name)
                 
                 HStack {
                     Image(systemName: "location.fill")
@@ -41,7 +44,7 @@ struct MatchPreviewView: View {
                         .frame(width: 14, height: 14)
                         .foregroundColor(.gray)
                     
-                    Text("SF, USA")
+                    Text(match.location)
                         .font(.caption)
                     .foregroundStyle(.gray)
                 }
@@ -50,6 +53,6 @@ struct MatchPreviewView: View {
     }
 }
 
-#Preview {
-    MatchPreviewView()
-}
+//#Preview {
+//    MatchPreviewView()
+//}

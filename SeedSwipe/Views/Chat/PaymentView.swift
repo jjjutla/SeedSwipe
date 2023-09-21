@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PaymentView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.openURL) var openURL
     @State private var amount: String = ""
 
     private var numberFormatter: NumberFormatter = {
@@ -33,6 +34,7 @@ struct PaymentView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 28)
+                    .offset(y: 1)
             }
             .padding(.top, 10)
             .padding(.bottom, 40)
@@ -61,13 +63,15 @@ struct PaymentView: View {
                     .frame(width: 150)
                 
                 Button {
-                    self.presentationMode.wrappedValue.dismiss()
+                    if let url = URL(string: "https://buy.stripe.com/test_14k9BU92O88de5OcMM") {
+                        openURL(url)
+                    }
                 } label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .foregroundColor(.blue)
                         .font(Font.system(size: 34, weight: .regular))
                 }
-                .offset(x: -6,y: -15)
+                .offset(x: -6, y: -15)
             }
             
             Spacer()

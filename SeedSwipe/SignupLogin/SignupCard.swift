@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignupCard: View {
     
+    @State var name = ""
     @State var email = ""
     @State var password = ""
     @State var selectedPerson = false
@@ -24,6 +25,8 @@ struct SignupCard: View {
     @State var appear = [false, false, false]
     
     @ObservedObject var authViewModel: AuthViewModel
+    
+    private let apiService = APIService.shared
 
     var body: some View {
         content
@@ -225,9 +228,28 @@ struct SignupCard: View {
             alertMessage = "Password should be at least 6 characters long."
             showAlert.toggle()
         } else {
-            alertTitle = "Success"
-            alertMessage = "Account created successfully."
-            authViewModel.exitAuthPage.toggle()
+            let signUpDetails = [
+                "name": name,
+                "email": email,
+                "password": password
+            ]
+            
+            if let bodyData = try? JSONSerialization.data(withJSONObject: signUpDetails, options: []) {
+                apiService.signup(with: bodyData) { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success:
+                            alertTitle = "Success"
+                            alertMessage = "Account created successfully."
+                            authViewModel.exitAuthPage.toggle()
+                        case .failure(let error):
+                            alertTitle = "Error"
+                            alertMessage = error.localizedDescription
+                            showAlert.toggle()
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -240,7 +262,3 @@ struct SignupCard: View {
         return password.count >= 6
     }
 }
-
-//#Preview {
-//    SignupCard()
-//}

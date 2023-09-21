@@ -162,7 +162,7 @@ struct SigninCard: View {
     
     
     func signin() {
-        
+        authViewModel.verificationPage.toggle()
     }
     
     func resetPassword() {
@@ -206,6 +206,52 @@ struct SigninCard: View {
     
 }
 
-//#Preview {
-//    SigninView()
-//}
+extension SigninCard {
+    
+    func apiLogin(email: String, password: String) {
+        let url = URL(string: "https://yourapiurl.com/login")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = ["email": email, "password": password]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                // handle error here
+                DispatchQueue.main.async {
+                    self.alertTitle = "Error"
+                    self.alertMessage = error?.localizedDescription ?? "Unknown error"
+                    self.showAlert = true
+                }
+                return
+            }
+            
+            do {
+                // assuming server responds with json containing a key "success" that indicates if authentication was successful
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let success = json["success"] as? Bool, success {
+                    DispatchQueue.main.async {
+                        authViewModel.verificationPage.toggle()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.alertTitle = "Login Failed"
+                        self.alertMessage = "Incorrect email or password"
+                        self.showAlert = true
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.alertTitle = "Error"
+                    self.alertMessage = error.localizedDescription
+                    self.showAlert = true
+                }
+            }
+        }.resume()
+    }
+    
+    func signin() {
+        apiLogin(email: email, password: password)
+    }
+}

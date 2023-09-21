@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SeedSwipeApp: App {
+    @StateObject var chatViewModel = ChatViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            AuthView()
+                .environmentObject(chatViewModel)
                 .preferredColorScheme(.dark)
         }
     }

@@ -13,6 +13,8 @@ struct ProfileView: View {
         GridItem(.adaptive(minimum: 80))
     ]
     
+    @State private var isReferral: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,20 +26,21 @@ struct ProfileView: View {
                 VStack(alignment: .leading) {
                     ScrollView(.vertical, showsIndicators: false) {
                         HStack(spacing: 16) {
-                            Image("monke")
+                            Image("default")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 70, height: 70)
                                 .cornerRadius(50)
                             
                             VStack(alignment: .leading) {
-                                Text("Artemiy Malyshau")
+                                Text(user?.name ?? "Loading...")
                                     .font(.system(size: 18, weight: .bold))
                                 
-                                Text("amalyshau2002@gmail.com")
+                                Text(user?.email ?? "Loading...")
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                             }
+
                             
                             Spacer()
                         }
@@ -45,7 +48,7 @@ struct ProfileView: View {
                         
                         HStack {
                             Text("Your Preferences")
-                                .bold()
+                                .font(.system(size: 19, weight: .bold))
                             
                             Spacer()
                             
@@ -61,12 +64,49 @@ struct ProfileView: View {
                                     .foregroundStyle(.white.opacity(0.7))
                             }
                         }
+                        .padding(.bottom, 4)
+                        
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Image(systemName: "person.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16)
+                                
+                                Text(user?.role ?? "Loading...")
+                                
+                                Spacer()
+                            }
+
+                            HStack {
+                                Image(systemName: "pin.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16)
+                                
+                                Text(user?.preferences.joined(separator: ", ") ?? "Loading...")
+                                
+                                Spacer()
+                            }
+
+                            HStack {
+                                Image(systemName: "dollarsign")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16)
+                                
+                                Text(user?.investmentRange ?? "Loading...")
+                                
+                                Spacer()
+                            }
+
+                        }
                         .padding(.bottom, 16)
                         
                         HStack {
                             Text("Your Matches")
-                                .bold()
-                            
+                                .font(.system(size: 19, weight: .bold))
+
                             Spacer()
                             
                             Button {
@@ -83,8 +123,8 @@ struct ProfileView: View {
                         }
                         
                         LazyVGrid(columns: columns, spacing: 24) {
-                            ForEach(1...6, id: \.self) { item in
-                                MatchPreviewView()
+                            ForEach(Matches.all, id: \.id) { match in
+                                MatchPreviewView(match: match)
                             }
                         }
                         .padding(.top, 10)
@@ -101,6 +141,43 @@ struct ProfileView: View {
                 .shadow(radius: 8)
             }
             .navigationTitle("Profile")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        isReferral.toggle()
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+            }
+            .sheet(isPresented: $isReferral) {
+                ReferralView()
+                    .presentationDetents([.fraction(0.22)])
+            }
+        }
+    }
+    
+    init() {
+        fetchUserInfo()
+    }
+
+    func fetchUserInfo() {
+        isLoading = true
+        APIService.shared.userInfo(with: nil) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    do {
+                        let user = try JSONDecoder().decode(User.self, from: data)
+                        self.user = user
+                    } catch {
+                        self.error = error
+                    }
+                case .failure(let error):
+                    self.error = error
+                }
+                self.isLoading = false
+            }
         }
     }
 }
@@ -115,3 +192,5 @@ extension UIScreen{
    static let screenHeight = UIScreen.main.bounds.size.height
    static let screenSize = UIScreen.main.bounds.size
 }
+
+

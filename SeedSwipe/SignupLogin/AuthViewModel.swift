@@ -11,5 +11,6 @@ class AuthViewModel: ObservableObject {
     
     @Published var showSignInCard = false
     @Published var exitAuthPage = false
+    @Published var verificationPage = false
     
 }
