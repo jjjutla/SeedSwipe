@@ -3,6 +3,9 @@ You've heard about Tinder, but what about SeedSwipe?
 
 SeedSwipe's iOS App seamlessly connects investors to startups. It uses a Machine Learning model inspired by Netflix's content based filtering that pairs the most compatible startups with investors. The App is integrated with the Crunchbase database for startup and investor data and facilitates instant investment transactions via Stripe's trusted payment processing. To ensure utmost security, SeedSwipe incorporates Twillo and Fastgen's authentication. Additionally, with Fastgen at it's core, the app provides email confirmations for every investment and match.
 
+[![Video Thumbnail](https://img.youtube.com/vi/8A-XHYUh-Mg/maxresdefault.jpg)](https://www.youtube.com/watch?v=8A-XHYUh-Mg)
+
+
 ### Images
 <img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/07382df8-4003-4cba-bd3f-29e419beae08" width=16% height=16%>
 <img src="https://github.com/nkoorty/SeedSwipe/assets/80065244/6e435f6b-2f60-4edf-840e-8da2d0abb075" width=16% height=16%>
