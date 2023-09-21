@@ -50,6 +50,8 @@ Once in the chat feature a button for the investor to send payments will appear.
 ## **6. Referral Feature:**
 There's a button in the app allowing users to share a Fastgen referral link!
 
+## iOS App Description
+The iOS App was built entirely using SwiftUI and internal Apple toolings. One external package for "AlertToasts" was used in order to indicate matches. The App uses MVVM architecture and makes API calls using native Swift commands.
 
 ## Team
 
