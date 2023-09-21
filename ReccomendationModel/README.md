@@ -1,12 +1,12 @@
 # Seedswipe Recommendation System Model (Content Based Filtering)
 
-Companies like Netflix are all about connecting people to the movies they love. To help investors find those movies, they developed world-class movie recommendation system: CinematchSM. Its job is to predict whether someone will enjoy a movie based on how much they liked or disliked other movies. Netflix uses those predictions to make personal movie recommendations based on each investors’s unique tastes. And while Cinematch is doing pretty well, it can always be made better.
+Companies like Netflix are all about connecting people to the movies they love. To help investors find those movies, they developed world-class movie recommendation system: CinematchSM. Its job is to predict whether someone will enjoy a movie based on how much they liked or disliked other movies. Netflix uses those predictions to make personal movie recommendations based on each user's unique tastes. And while Cinematch is doing pretty well, it can always be made better.
 
 
-There are a lot of interesting alternative approaches to how Cinematch works that netflix haven’t tried. Some are described in the literature, some aren’t. For the Fastgen Hackathon I tried to test these alternative approches using a Cunchbase Reccomendation System which powers the reccomendation system for Seedswipe, reccomending Investors with potential startups based on their portfolio, similar investors portflios and the timing.
+There are a lot of interesting alternative approaches to how Cinematch works that Netflix haven’t tried. For the Fastgen Hackathon I tried to test these alternative approches using a Cunchbase reccomendation model which powers the reccomendation system for Seedswipe, reccomending Investors with potential Startups based on their portfolio, similar investors portflios and the timing.
 
 ### Objectives:
-- Predict the rating that an investor would give to a startup that they have not yet rated. Instead of a binary classifer I use a similar approach to Netflix - 1-5 stars, which we can infer in different ways later for longevity.<br>
+- Predict the rating that an investor would give to a startup that they have not yet rated. Instead of a binary classifer I use a similar approach to Netflix - 1-5 stars, which we can infer in different ways later for longevity.
 - Minimize the difference between predicted and actual rating (RMSE and MAPE).
 
 
